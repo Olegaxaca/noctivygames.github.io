@@ -6,126 +6,71 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: #0a0a0f;
-  color: #eaeaf0;
-  display: flex;
-}
-
-/* SIDE MENU */
-.side {
-  width: 90px;
-  height: 100vh;
-  background: #050509;
-  border-right: 1px solid rgba(255,255,255,0.05);
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 24px;
-}
-
-.side-logo {
-  font-weight: 700;
-  font-size: 20px;
-  margin-bottom: 40px;
-  opacity: 0.8;
-}
-
-.side nav a {
-  writing-mode: vertical-rl;
-  margin: 18px 0;
-  text-decoration: none;
-  color: #888;
-  font-size: 12px;
-  transition: 0.3s;
-}
-
-.side nav a:hover {
-  color: #fff;
-}
-
-/* MAIN */
-main {
-  margin-left: 90px;
-  width: calc(100% - 90px);
+  background: #0f0f0f;
+  color: #e5e5e5;
+  line-height: 1.6;
 }
 
 /* HERO */
 .hero {
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+}
+
+.hero-inner {
   text-align: center;
 }
 
-.hero-logo {
-  width: 180px;
-  margin-bottom: 24px;
-  opacity: 0.9;
-}
-
 .hero h1 {
-  font-size: 48px;
-  font-weight: 700;
+  font-size: 56px;
+  font-weight: 600;
   letter-spacing: 2px;
 }
 
-.hero p {
-  margin-top: 12px;
-  color: #aaa;
-  font-size: 16px;
+.tagline {
+  margin-top: 16px;
+  font-size: 18px;
+  opacity: 0.7;
 }
 
 /* SECTIONS */
 .section {
-  padding: 120px 15%;
+  padding: 100px 20px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .section.dark {
-  background: #07070c;
+  background: #090909;
 }
 
 .section h2 {
-  font-size: 32px;
-  margin-bottom: 24px;
+  font-size: 26px;
+  margin-bottom: 20px;
+  font-weight: 400;
 }
 
 .section p {
-  max-width: 640px;
-  line-height: 1.8;
-  color: #cfcfd6;
+  font-size: 17px;
+  opacity: 0.85;
 }
 
-/* TELEGRAM */
-.tg {
+/* SOCIAL */
+.social {
   display: inline-block;
-  margin-top: 24px;
-  color: #8f9cff;
+  margin-top: 10px;
+  color: #e5e5e5;
   text-decoration: none;
-  font-weight: 500;
-}
-
-.tg:hover {
-  text-decoration: underline;
+  border-bottom: 1px solid #444;
+  padding-bottom: 4px;
 }
 
 /* FOOTER */
 footer {
-  padding: 40px;
   text-align: center;
-  color: #666;
-  font-size: 13px;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .side {
-    display: none;
-  }
-  main {
-    margin-left: 0;
-    width: 100%;
-  }
+  padding: 40px 20px;
+  font-size: 14px;
+  opacity: 0.5;
 }
