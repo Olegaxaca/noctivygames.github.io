@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noctivy Games</title>
+  <style>
+    /* Основные стили */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0b0e1a, #1a1f3a, #0b0e1a);
+      color: #ffffff;
+      min-height: 100vh;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 20px;
+      min-height: 80vh;
+    }
+    section:nth-child(even) {
+      background: rgba(0,0,0,0.3);
+    }
+
+    .block {
+      max-width: 720px;
+      width: 100%;
+      background: rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s ease;
+    }
+
+    .logo {
+      width: 180px;
+      margin-bottom: 20px;
+    }
+
+    h1 { font-size: 46px; margin-bottom: 16px; }
+    h2 { font-size: 32px; margin-bottom: 18px; }
+    p { font-size: 16px; line-height: 1.6; color: rgba(255,255,255,0.8); }
+
+    .btn {
+      margin-top: 28px;
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #7f8cff, #9a6bff);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .btn:hover { opacity: 0.9; transform: scale(1.05); }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: rgba(255,255,255,0.6);
+      background: rgba(11,14,26,0.85);
+      font-size: 14px;
+    }
+
+    .visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="block">
+      <img src="logo.png" alt="Noctivy Games Logo" class="logo">
+      <h1>Noctivy Games</h1>
+      <p>Инди-студия. Мрачные миры и тихие истории.</p>
+      <a href="#about" class="btn">О студии</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="block">
+      <h2>О студии</h2>
+      <p>Noctivy Games — независимая студия, создающая атмосферные проекты с упором на стиль, настроение и эмоции.</p>
+    </div>
+  </section>
+
+  <!-- VISION -->
+  <section id="vision">
+    <div class="block">
+      <h2>Что мы создаём</h2>
+      <p>Мы вдохновляемся тёмными сказками и недосказанными мирами. Наши игры тихие, но оставляют глубокий след.</p>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="block">
+      <h2>Проекты</h2>
+      <p>Сейчас мы работаем над первым проектом. Детали будут раскрыты позже.</p>
+    </div>
+  </section>
+
+  <!-- SOCIALS -->
+  <section id="contact">
+    <div class="block">
+      <h2>Связаться</h2>
+      <p>Следите за разработкой в Telegram:</p>
+      <a href="https://t.me/NoctivyGames" target="_blank" class="btn">Telegram</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Noctivy Games. Все права защищены.
+  </footer>
+
+  <script>
+    const blocks = document.querySelectorAll('.block');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.1});
+
+    blocks.forEach(block => observer.observe(block));
+  </script>
+
+</body>
+    </html>
